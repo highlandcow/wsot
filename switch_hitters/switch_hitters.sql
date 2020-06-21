@@ -1,5 +1,5 @@
 # Count of batters by handedness from 1925 to present
-SELECT yearID AS 'YEAR_ID', bats AS 'HANDEDNESS', COUNT(BATS) AS 'COUNT'
+SELECT yearID AS 'YEAR_ID', bats AS 'HANDEDNESS', COUNT(BATS) AS 'COUNT', SUM(AB) AS "SUM_AB"
 FROM batting b
 JOIN people p
 ON b.playerID = p.playerID
