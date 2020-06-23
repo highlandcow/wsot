@@ -23,3 +23,11 @@ JOIN (
 	GROUP BY yearID
 	ORDER BY yearID) as b
 ON a.yearID = b.yearID;
+
+
+
+# Count of all players by handedness
+SELECT bats, throws, COUNT(throws)
+FROM people p
+GROUP BY bats, throws
+HAVING bats IN ('R', 'L', 'B') AND throws IN ('R', 'L', 'S');
