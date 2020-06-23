@@ -27,7 +27,7 @@ ON a.yearID = b.yearID;
 
 
 # Count of all players by handedness
-SELECT bats, throws, COUNT(throws)
+SELECT bats AS "BATS", throws AS "THROWS", COUNT(throws) AS "NUM_PLAYERS", COUNT(THROWS)/18566 AS "PCT_TOTAL"
 FROM people p
 GROUP BY bats, throws
 HAVING bats IN ('R', 'L', 'B') AND throws IN ('R', 'L', 'S');
